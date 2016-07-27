@@ -40,7 +40,7 @@ openSansObserver.load().then(() => {
 // Optionally, this could be changed to leverage a created history
 // e.g. `const browserHistory = useRouterHistory(createBrowserHistory)();`
 const initialState = {};
-const store = configureStore(initialState, browserHistory);
+const store = window.REDUX_STORE = configureStore(initialState, browserHistory);
 
 // If you use Redux devTools extension, since v2.0.1, they added an
 // `updateStore`, so any enhancers that change the store object
