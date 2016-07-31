@@ -5,7 +5,7 @@ var ncp = require('ncp').ncp;
 var rimraf = require('rimraf');
 
 var reduxTmpPath = path.resolve(__dirname, './../../goodsense_modules/tmpgsredux');
-var reduxSrcTmpPath = path.resolve(__dirname, './../../goodsense_modules/tmpgsredux/src');
+var reduxSrcTmpPath = path.resolve(__dirname, './../../goodsense_modules/tmpgsredux/gsredux');
 var modulesPath = path.resolve(__dirname, './../../goodsense_modules');
 var reduxModulesPath = path.resolve(__dirname, './../../goodsense_modules/gsredux');
 

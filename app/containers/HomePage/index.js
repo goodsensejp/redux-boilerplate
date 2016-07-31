@@ -8,15 +8,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import Helmet from 'react-helmet';
-import {appActions} from 'actions';
 
 import styles from './styles.css';
 
 export class HomePage extends React.Component {
-  componentWillMount() {
-    // this.props.startApp();
-  }
-
   render() {
     return (
       <article>
@@ -36,7 +31,6 @@ HomePage.propTypes = {
 };
 
 const mapDispatchToProps = {
-  startApp: appActions.startApp
 };
 
 const mapStateToProps = state => state;

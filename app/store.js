@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
-import {reduxModules} from './goodsense';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const devtools = window.devToolsExtension || (() => noop => noop);
@@ -34,10 +34,7 @@ export default function configureStore(initialState = {}, history) {
   // Extensions
   store.runSaga = sagaMiddleware.run;
 
-  // Attach goodsense redux modules
-  for(var key in reduxModules.sagas) {
-    store.runSaga(reduxModules.sagas[key]);
-  }
+  store.runSaga(rootSaga);
 
   store.asyncReducers = {}; // Async reducer registry
 

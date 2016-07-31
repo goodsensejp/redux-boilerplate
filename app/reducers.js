@@ -5,7 +5,14 @@
 
 import { combineReducers } from 'redux';
 import { LOCATION_CHANGE } from 'react-router-redux';
-import {reduxModules} from './goodsense';
+import {
+  baseModule,
+  entityModule,
+  authModule,
+  applicationModule,
+  emailModule,
+  storeModule,
+} from './goodsense';
 
 /*
  * routeReducer
@@ -42,6 +49,11 @@ export default function createReducer(asyncReducers) {
   return combineReducers({
     route: routeReducer,
     ...asyncReducers,
-    ...reduxModules.reducers
+    ...baseModule.reducers,
+    ...entityModule.reducers,
+    ...authModule.reducers,
+    ...applicationModule.reducers,
+    ...emailModule.reducers,
+    ...storeModule.reducers,
   });
 }
